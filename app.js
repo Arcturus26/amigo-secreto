@@ -46,3 +46,9 @@ document.getElementById('amigo').addEventListener('keydown', function(event) {
         agregarAmigo();
     }
 });
+
+function reiniciarJuego() {
+    amigos = []; // Vacía el array de amigos
+    ulListaAmigos.innerHTML = ""; // Limpia la lista de amigos en la interfaz
+    ulResultado.innerHTML = ""; // Limpia el resultado del sorteo
+}

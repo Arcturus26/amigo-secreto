@@ -1,5 +1,6 @@
 :root {
     --color-primary: #4B69FD;
+    --color-primary-hover: #2e51fe;
     --color-secondary: #FFF9EB;
     --color-tertiary: #C4C4C4;
     --color-button: #fe652b;
@@ -151,6 +152,7 @@ ul {
     color: var(--color-white);
     background-color: var(--color-button);
     font-size: 16px;
+    margin-bottom: 18px;
 }
 
 .button-draw img {
@@ -159,4 +161,19 @@ ul {
 
 .button-draw:hover {
     background-color: var(--color-button-hover);
+}
+
+/* Botón de reiniciar juego*/
+.button-reset {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    color: var(--color-white);
+    background-color: var(--color-primary);
+    font-size: 16px;
+}
+
+.button-reset:hover {
+    background-color: var(--color-primary-hover);
 }
