@@ -1,5 +1,7 @@
 // Array que almacenará los nombres
 let amigos = [];
+let ulListaAmigos = document.getElementById("listaAmigos");
+let ulResultado = document.getElementById("resultado");
 
 function agregarAmigo() {
     inputNombre = document.getElementById("amigo").value.trim();
@@ -10,11 +12,11 @@ function agregarAmigo() {
     // Si el nombre ya está incluido   
     }else{
         if (amigos.includes(inputNombre)) {
-            alert(`El nombre ${inputNombre} ya está agregado`);
+            alert(`El nombre \"${inputNombre}\" ya está agregado`);
         // Si el nombre no está incluído, lo agrega
         }else{
             amigos.push(inputNombre);
-            listaAmigos.innerHTML += `<li>${inputNombre}</li>`;
+            ulListaAmigos.innerHTML += `<li>${inputNombre}</li>`;
             limpiarCaja();
             console.log(amigos);
         }
@@ -27,8 +29,14 @@ function limpiarCaja() {
 }
 
 function sortearAmigo() {
-    let amigoSorteado = amigos[Math.floor(Math.random()*amigos.length)]
-    document.getElementById("resultado").innerHTML = `El amigo secreto es: <li>${amigoSorteado}</li>`;
+    // Solo sorteará si hay más 2 o más amigos
+    if (amigos.length >= 2) {
+        let amigoSorteado = amigos[Math.floor(Math.random()*amigos.length)];
+        ulResultado.innerHTML = `El amigo secreto es: <li>${amigoSorteado}</li>`;
+    }else{
+        ulResultado.innerHTML = `<li style="color: red;">
+        Necesitas al menos 2 amigos para sortear.</li>`;
+    }
     return
 }
 
