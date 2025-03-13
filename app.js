@@ -2,17 +2,20 @@
 let amigos = [];
 
 function agregarAmigo() {
-    let nombre = document.getElementById("amigo").value.trim();
-    if (nombre == '') {
-        alert("Por favor, inserte un nombre.");
+    inputNombre = document.getElementById("amigo").value.trim();
+    // Si el nombre está vacío
+    if (inputNombre == '') {
+        alert("Por favor, ingrese un nombre.");
         return;
-        
+    // Si el nombre ya está incluido   
     }else{
-        if (amigos.includes(nombre)) {
-            alert(`El nombre ${nombre} ya está agregado`);
+        if (amigos.includes(inputNombre)) {
+            alert(`El nombre ${inputNombre} ya está agregado`);
+        // Si el nombre no está incluído, lo agrega
         }else{
-            amigos.push(nombre);
-            limpiarCaja()
+            amigos.push(inputNombre);
+            listaAmigos.innerHTML += `<li>${inputNombre}</li>`;
+            limpiarCaja();
             console.log(amigos);
         }
     }
@@ -20,4 +23,11 @@ function agregarAmigo() {
 
 function limpiarCaja() {
     document.getElementById("amigo").value = "";
+    return
+}
+
+function sortearAmigo() {
+    let amigoSorteado = amigos[Math.floor(Math.random()*amigos.length)]
+    document.getElementById("resultado").innerHTML = `El amigo secreto es: <li>${amigoSorteado}</li>`;
+    return
 }
