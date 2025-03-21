@@ -33,7 +33,7 @@ body {
 
 /* Banner */
 .header-banner {
-    flex: 40%;
+    flex: 30%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -42,7 +42,7 @@ body {
 
 /* Sección de entrada */
 .input-section {
-    flex: 60%;
+    flex: 70%;
     background-color: var(--color-secondary);
     border: 1px solid #000;
     border-radius: 64px 64px 0 0;
