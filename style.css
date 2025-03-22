@@ -37,15 +37,19 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 40px 0 0;
+    padding: 20px 0 0;
 }
 
+.header-banner img {
+    width: 100%;
+    max-width: 300px;
+}
 /* Sección de entrada */
 .input-section {
     flex: 70%;
     background-color: var(--color-secondary);
     border: 2px solid #000;
-    border-radius: 64px 64px 0 0;
+    border-radius: 32px 32px 0 0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -55,7 +59,7 @@ body {
 
 /* Títulos */
 .main-title {
-    font-size: 48px;
+    font-size: 3rem;
     font-family: "Merriweather", serif;
     font-weight: 900;
     font-style: italic;
@@ -64,7 +68,7 @@ body {
 
 .section-title {
     font-family: "Inter", serif;
-    font-size: 36px;
+    font-size: 2.25rem;
     font-weight: 700;
     color: var(--color-primary);
     margin: 10px 0;
@@ -87,11 +91,16 @@ body {
     border-radius: 25px 0 0 25px;
     font-size: 16px;
 }
-
+.name-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 40px;
+    row-gap: 20px;
+}
 .button-container {
     width: auto;
-    justify-content: center;
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 10px;
 }
 
@@ -149,12 +158,12 @@ ul {
 .button-draw {
     display: flex;
     align-items: center;
-    width: 100%;
+    justify-content: center;
     padding: 10px 40px;
     color: var(--color-white);
     background-color: var(--color-button);
     font-size: 16px;
-    /*margin-bottom: 18px;*/
+ 
 }
 
 .button-draw img {
@@ -170,7 +179,6 @@ ul {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100%;
     padding: 10px 40px;
     color: var(--color-white);
     background-color: var(--color-primary);
@@ -179,4 +187,16 @@ ul {
 
 .button-reset:hover {
     background-color: var(--color-primary-hover);
+}
+
+@media (max-width: 768px) {
+    .header-banner {
+        flex-direction: column;
+    }
+    .button-container {
+        margin-top: 30%;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+
 }
